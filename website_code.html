@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erroneous Website Assignment</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #253858;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+
+      nav {
+        background-color: #34495e;
+        padding: 15px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-right: 20px;
+      }
+
+      .container {
+        width: 80%;
+        margin: 20px auto;
+        background: white;
+        padding: 20px;
+      }
+
+      .card {
+        background: #e8f4ff;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 8px;
+      }
+
+      input,
+      button {
+        padding: 10px;
+        margin: 5px 0;
+      }
+
+      button {
+        background-color: #253858;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      footer {
+        background-color: #253858;
+        color: white;
+        text-align: center;
+        padding: 15px;
+      }
+
+      /* Intentional CSS error */
+      h2 {
+        color: blu;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Erroneous Website</h1>
+      <p>A Website Debugging Assignment</p>
+    </header>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#contact">Contact</a>
+      <a href="#missing">Missing Page</a>
+    </nav>
+
+    <div class="container" id="home">
+      <h2>Welcome</h2>
+      <p>
+        Welcome to my erroneous website project. This website contains
+        intentional bugs for debugging practice.
+      </p>
+
+      <div class="card">
+        <h2>Bug 1: Incorrect Calculator</h2>
+        <p>Enter two numbers to calculate their sum.</p>
+
+        <input type="number" id="num1" placeholder="First number" />
+        <input type="number" id="num2" placeholder="Second number" />
+        <br />
+
+        <button onclick="calculateSum()">Calculate Sum</button>
+
+        <p id="result">Result will appear here.</p>
+      </div>
+
+      <div class="card">
+        <h2>Bug 2: Form Validation</h2>
+
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="Enter your name" />
+          <br />
+
+          <input type="email" id="email" placeholder="Enter your email" />
+          <br />
+
+          <button type="submit">Submit Form</button>
+        </form>
+
+        <p id="message"></p>
+      </div>
+
+      <div class="card" id="calculator">
+        <h2>Bug 3: Broken Button</h2>
+        <button onclick="showInformation()">Show Information</button>
+        <p id="information"></p>
+      </div>
+
+      <div class="card" id="contact">
+        <h2>About This Project</h2>
+        <p>
+          This project demonstrates common HTML, CSS, and JavaScript mistakes.
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <p>Student Assignment - Erroneous Website</p>
+    </footer>
+
+    <script>
+      // Intentional bug: subtraction instead of addition
+      function calculateSum() {
+        let a = Number(document.getElementById("num1").value);
+        let b = Number(document.getElementById("num2").value);
+
+        let sum = a - b;
+
+        document.getElementById("result").innerHTML = "Sum: " + sum;
+      }
+
+      // Intentional bug: incorrect element ID
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          let name = document.getElementById("name").value;
+          let email = document.getElementById("email").value;
+
+          if (name === "" || email === "") {
+            document.getElementById("message").innerHTML =
+              "Please fill in all fields.";
+          } else {
+            document.getElementById("messages").innerHTML =
+              "Form submitted successfully!";
+          }
+        });
+
+      // Intentional bug: undefined variable
+      function showInformation() {
+        document.getElementById("information").innerHTML = projectInformation;
+      }
+    </script>
+  </body>
+</html>
